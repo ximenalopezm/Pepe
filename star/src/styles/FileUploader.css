@@ -1,0 +1,24 @@
+/* FileUploader.css */
+
+/* Estilos personalizados para el botón de Seleccionar archivo */
+input[type="file"] {
+  background: rgba(89, 111, 189, 0.4) !important;
+  color: #fff; /* Cambia el color del texto del botón */
+  padding: 10px 20px; /* Ajusta el relleno para hacer el botón más grande */
+  border: none; /* Elimina el borde del botón */
+  cursor: pointer; /* Cambia el cursor al puntero al pasar por encima */
+  border-radius: 5px; /* Agrega bordes redondeados al botón */
+}
+
+.custom-file-input {
+  background-color: #007bff; /* Cambia el color de fondo del botón */
+  color: #fff; /* Cambia el color del texto del botón */
+  padding: 10px 20px; /* Ajusta el relleno para hacer el botón más grande */
+  border: none; /* Elimina el borde del botón */
+  cursor: pointer; /* Cambia el cursor al puntero al pasar por encima */
+  border-radius: 5px; /* Agrega bordes redondeados al botón */
+}
+
+.custom-file-input:hover {
+  background-color: #0056b3; /* Cambia el color de fondo cuando se pasa el cursor por encima */
+}
