@@ -1,0 +1,11 @@
+.gradient-background {
+    /* Degradado de colores */
+    background: linear-gradient(to bottom, #ff5733, #3333ff);
+    
+    /* Estilo de fondo a pantalla completa */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
