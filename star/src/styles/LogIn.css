@@ -1,14 +1,15 @@
 .gradient-background {
-  /* Degradado de colores */
-  background: linear-gradient(to bottom, #e5e5e5, #4459a5);
+    /* Degradado de colores */
+    background: linear-gradient(to bottom, #E5E5E5, #93a4e2);
+    
+    /* Estilo de fondo a pantalla completa */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-  /* Estilo de fondo a pantalla completa */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 
 img {
   justify-content: center;
@@ -17,11 +18,29 @@ img {
 }
 
 button {
-  display: block;
-  margin: auto;
-  width: 13% !important;
-  background: rgba(119, 145, 237, 0.4) !important;
-  height: 70px;
-  border-radius: 25px;
-  border: none;
+    display: block;
+    margin: auto;
+    width: 13% !important;
+    background: rgba(119, 145, 237, 0.4) !important;
+    height: 70px;
+    border-radius: 25px;
+    border: none;
+  }
+
+  button:hover {
+    background: rgba(119, 145, 237, 0.8) !important;
+  }
+
+span{
+  font-size: 20px;
+}
+
+.uploader{
+  margin-top: 10%;
+}
+
+p{
+  color : #000000;
+  font-size: 15px;
+  text-align: center;
 }
