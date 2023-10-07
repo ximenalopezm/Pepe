@@ -21,7 +21,7 @@ function LogIn() {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 }
 
