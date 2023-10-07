@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.container {  
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.webviewer {
+  flex: 1;
+  margin: 8px;
+  -webkit-box-shadow: 1px 1px 10px #999;
+          box-shadow: 1px 1px 10px #999;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  
+  
+}
