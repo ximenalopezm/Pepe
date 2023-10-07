@@ -10,6 +10,10 @@ input[type="file"] {
   border-radius: 5px; /* Agrega bordes redondeados al botón */
 }
 
+button {
+  padding: 0;
+}
+
 .custom-file-input {
   background-color: #007bff; /* Cambia el color de fondo del botón */
   color: #fff; /* Cambia el color del texto del botón */
