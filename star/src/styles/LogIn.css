@@ -30,6 +30,10 @@ button {
     background: rgba(119, 145, 237, 0.8) !important;
   }
 
+span{
+  font-size: 20px;
+}
+
 .uploader{
   margin-top: 10%;
 }
