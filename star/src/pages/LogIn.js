@@ -10,7 +10,7 @@ function LogIn() {
             <img src={logo} alt="logo" />
             
             <div id = "uploader" className='uploader'>
-              
+              <button className="btn btn-primary btn-block btn-lg" type="submit">Select PDF file</button>
             </div>
           </div>
         </div>
