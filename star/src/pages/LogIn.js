@@ -17,10 +17,12 @@ function LogIn() {
               </button>
               <p>or drag and drop files here</p>
             </div>
+
           </div>
         </div>
       </div>
-    );
+    </div>
+  );
 }
 
 export default LogIn;
