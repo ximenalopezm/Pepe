@@ -1,6 +1,6 @@
 .gradient-background {
     /* Degradado de colores */
-    background: linear-gradient(to bottom, #E5E5E5, #4459A5);
+    background: linear-gradient(to bottom, #E5E5E5, #93a4e2);
     
     /* Estilo de fondo a pantalla completa */
     position: absolute;
@@ -25,3 +25,17 @@ button {
     border-radius: 25px;
     border: none;
   }
+
+  button:hover {
+    background: rgba(119, 145, 237, 0.8) !important;
+  }
+
+.uploader{
+  margin-top: 10%;
+}
+
+p{
+  color : #000000;
+  font-size: 15px;
+  text-align: center;
+}
