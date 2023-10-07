@@ -1,6 +1,6 @@
 .gradient-background {
     /* Degradado de colores */
-    background: linear-gradient(to bottom, #E5E5E5, #a1d6d4);
+    background: linear-gradient(to bottom, #E5E5E5, #4459A5);
     
     /* Estilo de fondo a pantalla completa */
     position: absolute;
@@ -8,4 +8,10 @@
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+img {
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
   }
