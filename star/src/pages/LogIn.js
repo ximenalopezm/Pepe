@@ -29,7 +29,7 @@ function LogIn() {
             <button className="btn btn-primary btn-block btn-lg" onClick={handleButtonFileClick}>
               <span><b>View Suggestions</b></span>
             </button>
-            <p>Upload file</p>
+            <p className='up'>Upload file</p>
           </div>
         </div>
       </div>
