@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "../styles/TextPreview.css";
 
-const TextPreview = ({cardText, onClick}) => {
+
+const TextPreview = ({cardText, cardTitle, onClick}) => {
   const [cards, setCards] = useState([
     {
       id: 1,
-      title: "This is option 2",
+      title: cardTitle,
       description:
         cardText,
       isExpanded: false,
@@ -29,15 +30,19 @@ const TextPreview = ({cardText, onClick}) => {
     setCards(updatedCards);
   };
 
+
   return (
     <div className="card-container">
-      {cards.map((card) => (
+      {
+      // cards.length === 0 ? (
+      //   <p>No change needs to be made.</p>
+      // ) : 
+      cards.map((card) => (
         <div
           key={card.id}
           className={`card2 ${card.isExpanded ? "expanded" : ""}`}
           onClick={() => {
             toggleCardExpansion(card.id);
-            onClick();
           }}
         >
           <h3>{card.title}</h3>
