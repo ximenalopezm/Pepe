@@ -1,15 +1,18 @@
 import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 import LogIn from './pages/LogIn';
-
-// Chiques puse esto en la app para ver como se veia e irle moviendo para hacer el fondo del login
+import { PDFCorrection } from './components/PDFCorrection';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <LogIn />
-      </header>
-    </div>
+      <Router>
+      <Routes> 
+        <Route path="/" element={<LogIn />} /> 
+        <Route path="/view" element={<PDFCorrection />} /> 
+      </Routes>
+    </Router>
   );
 }
 

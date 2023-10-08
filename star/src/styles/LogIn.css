@@ -1,7 +1,7 @@
 .gradient-background {
     /* Degradado de colores */
     background: linear-gradient(to bottom, #E5E5E5, #93a4e2);
-    
+    text-align: center;
     /* Estilo de fondo a pantalla completa */
     position: absolute;
     top: 0;
@@ -18,7 +18,6 @@ img {
 
 button {
     display: block;
-    margin: auto;
     width: 13% !important;
     background: rgba(119, 145, 237, 0.4) !important;
     height: 70px;

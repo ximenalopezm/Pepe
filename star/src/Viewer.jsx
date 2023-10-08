@@ -5,7 +5,6 @@ import './styles/Viewer.css';
 const Viewer = () => {
   const viewer = useRef(null);
 
-  // if using a class, equivalent of componentDidMount 
   useEffect(() => {
     WebViewer(
       {
