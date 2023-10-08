@@ -4,14 +4,12 @@ import logo from "../images/logo.svg";
 import { useNavigate } from 'react-router-dom'; 
 
 function LogIn() {
-  const [selectedFile, setSelectedFile] = useState(null);
   const navigate = useNavigate(); 
 
   const handleFileSelect = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setSelectedFile(file);
-      navigate('/view'); 
+      navigate('/view', { state: { file } }); 
     }
   };
 

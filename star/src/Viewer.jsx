@@ -2,21 +2,30 @@ import React, { useRef, useEffect } from 'react';
 import WebViewer from '@pdftron/webviewer';
 import './styles/Viewer.css';
 
-const Viewer = () => {
+const Viewer = ({file}) => {
   const viewer = useRef(null);
+  console.log(file);
 
   useEffect(() => {
     WebViewer(
       {
-        path: '/webviewer/lib',
-        initialDoc: '/files/PDFTRON_about.pdf',
         licenseKey: 'demo:1696694806392:7ceed1ab03000000002349e86424448cab9456268a93821a2edd579453',  // sign up to get a free trial key at https://dev.apryse.com
         disabledElements: [
           'header'
         ]
       },
       viewer.current,
-    ).then((instance) => {
+    ).then(instance => {
+        console.log('WebViewer initialized');
+        instance.UI.loadDocument(file, { filename: file.name })
+          .then(() => {
+            console.log('Document loaded successfully');
+          })
+          .catch((error) => {
+            console.error('Error loading document:', error);
+          });
+
+
       const { documentViewer, annotationManager, Annotations } = instance.Core;
 
       documentViewer.addEventListener('documentLoaded', () => {
