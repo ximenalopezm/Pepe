@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/TextPreview.css";
 
-const TextPreview = ({cardText}) => {
+const TextPreview = ({cardText, onClick}) => {
   const [cards, setCards] = useState([
     {
       id: 1,
@@ -35,7 +35,10 @@ const TextPreview = ({cardText}) => {
         <div
           key={card.id}
           className={`card2 ${card.isExpanded ? "expanded" : ""}`}
-          onClick={() => toggleCardExpansion(card.id)}
+          onClick={() => {
+            toggleCardExpansion(card.id);
+            onClick();
+          }}
         >
           <h3>{card.title}</h3>
           <p className={`small ${card.isExpanded ? "expanded" : ""}`}>

@@ -2,6 +2,11 @@ import React, { useRef, useEffect } from 'react';
 import WebViewer from '@pdftron/webviewer';
 import './styles/Viewer.css';
 
+let pageN = -1;
+let x;
+let y;
+let docViewer;
+
 const Viewer = ({file}) => {
   const viewer = useRef(null);
 
@@ -26,7 +31,7 @@ const Viewer = ({file}) => {
     });
 
             documentViewer.addEventListener('documentLoaded', () => {
-                const searchText = 'Another mistake is where';
+                const searchText = 'This Standard is applicable';
                 const mode = Search.Mode.PAGE_STOP | Search.Mode.HIGHLIGHT;
                 const searchOptions = {
                     // If true, a search of the entire document will be performed. Otherwise, a single search will be performed.
@@ -49,10 +54,14 @@ const Viewer = ({file}) => {
                             
                             annotationManager.addAnnotation(highlight);
                             annotationManager.drawAnnotations(highlight.PageNumber);
+                            pageN = highlight.PageNumber;
+                            x = highlight.Y;
+                            y = highlight.Y;
                         }
                     }
                 };
                 documentViewer.textSearchInit(searchText, mode, searchOptions)
+                docViewer = documentViewer;
             });
         });
     }, [file]);
@@ -64,4 +73,10 @@ const Viewer = ({file}) => {
     );
 };
 
-export default Viewer;
+function locateSuggestion() {
+    if (pageN !== -1) {
+        docViewer.displayPageLocation(pageN, x, y);
+    }
+}
+
+export {Viewer, locateSuggestion};
