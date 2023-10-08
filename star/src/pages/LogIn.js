@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import '../styles/LogIn.css';
 import logo from "../images/logo.svg";
 import { useNavigate } from 'react-router-dom'; 
