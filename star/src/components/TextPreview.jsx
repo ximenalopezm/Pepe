@@ -45,7 +45,8 @@ const TextPreview = ({cardText, cardTitle, onClick}) => {
             toggleCardExpansion(card.id);
           }}
         >
-          <h3>{card.title}</h3>
+          <h3>{card.isExpanded ?
+          card.title : card.title.split(" ").slice(0, 16).join(" ")}</h3>
           <p className={`small ${card.isExpanded ? "expanded" : ""}`}>
             {card.isExpanded
               ? card.description
