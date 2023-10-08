@@ -2,28 +2,28 @@ import React, { useRef, useEffect } from 'react';
 import WebViewer from '@pdftron/webviewer';
 import './styles/Viewer.css';
 
-const Viewer = () => {
-    const viewer = useRef(null);
-    
-    useEffect(() => {
-        WebViewer(
-            {
-                path: '/webviewer/lib',
-                initialDoc: '/files/PDFTRON_about.pdf',
-                licenseKey: 'demo:1696694806392:7ceed1ab03000000002349e86424448cab9456268a93821a2edd579453',  // sign up to get a free trial key at https://dev.apryse.com
-                disabledElements: [
-                    'header'
-                ]
-            },
-            viewer.current,
-        ).then((instance) => {
-            const { documentViewer, Annotations, Search, annotationManager } = instance.Core;
+const Viewer = ({file}) => {
+  const viewer = useRef(null);
 
-            documentViewer.setSearchHighlightColors({
-                // setSearchHighlightColors accepts both Annotations.Color objects or 'rgba' strings
-                searchResult: new Annotations.Color(0, 0, 255, 0.5),
-                activeSearchResult: 'rgba(0, 255, 0, 0.5)'
-            });
+  useEffect(() => {
+    WebViewer(
+      {
+        path: '/webviewer/lib',
+        licenseKey: 'demo:1696694806392:7ceed1ab03000000002349e86424448cab9456268a93821a2edd579453',  // sign up to get a free trial key at https://dev.apryse.com
+        disabledElements: [
+          'header'
+        ]
+      },
+      viewer.current,
+    ).then(instance => {
+      instance.UI.loadDocument(file, { filename: file.name });
+      const { documentViewer, annotationManager, Annotations, Search } = instance.Core;
+
+      documentViewer.setSearchHighlightColors({
+        // setSearchHighlightColors accepts both Annotations.Color objects or 'rgba' strings
+        searchResult: new Annotations.Color(0, 0, 255, 0.5),
+        activeSearchResult: 'rgba(0, 255, 0, 0.5)'
+    });
 
             documentViewer.addEventListener('documentLoaded', () => {
                 const searchText = 'Another mistake is where';
@@ -55,7 +55,7 @@ const Viewer = () => {
                 documentViewer.textSearchInit(searchText, mode, searchOptions)
             });
         });
-    }, []);
+    }, [file]);
 
     return (
         <div className="Viewer">

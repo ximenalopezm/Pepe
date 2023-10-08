@@ -1,7 +1,8 @@
 .container {  
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    width: 100% !important;
   }
   
   .webviewer {
@@ -9,6 +10,8 @@
     margin: 8px;
     -webkit-box-shadow: 1px 1px 10px #999;
             box-shadow: 1px 1px 10px #999;
+    border-radius: 0.6em !important;
+
   }
   
   .row {
@@ -17,4 +20,19 @@
     flex: 1;
     
     
+  }
+
+  .logo {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    border-radius: 0.6em !important;
+  }
+
+  .warning-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
   }
