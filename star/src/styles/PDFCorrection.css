@@ -1,8 +1,9 @@
-.container {  
+.container-fluid {  
     display: flex !important;
     flex-direction: column !important;
     height: 100% !important;
-    width: 100% !important;
+    width: 90% !important;
+    padding-right:0px ;
   }
   
   .webviewer {
@@ -23,8 +24,8 @@
   }
 
   .logo {
-    width: 60%;
-    height: 60%;
+    width: 45%;
+    height: 45%;
     object-fit: contain;
     border-radius: 0.6em !important;
   }
@@ -36,3 +37,23 @@
     align-items: center;
     flex: 1;
   }
+
+  
+  .col-4 {
+    padding-right: 0px !important;
+  }
+
+  .col-7 {
+    padding: 0px !important;
+  }
+
+  .col-1 {
+    padding: 0px !important;
+    margin : 0px !important;
+    }
+  .main-component {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+  }
+

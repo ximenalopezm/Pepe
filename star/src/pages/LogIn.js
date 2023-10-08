@@ -1,39 +1,56 @@
-import '../styles/LogIn.css';
+import "../styles/LogIn.css";
 import logo from "../images/logo.svg";
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from "react-router-dom";
 
 function LogIn() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleFileSelect = (e) => {
     const file = e.target.files[0];
     if (file) {
-      navigate('/view', { state: { file } }); 
+      navigate("/view", { state: { file } });
     }
   };
 
   const handleButtonFileClick = () => {
-    document.getElementById('fileInput').click();
+    document.getElementById("fileInput").click();
   };
 
   return (
-    <div className="gradient-background">
-      <div className="login-container">
+    <>
+      Result Skip Results Iframe EDIT ON
+      <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
+      <div className="content">
         <div className="login-form">
-          <img className='logoLogin' src={logo} alt="logo" />
+          <img className="logoLogin" src={logo} alt="logo" />
           <div className="text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>
+              Let's get working! select a file and STAR will give you
+              suggestions
+            </p>
           </div>
-          <div id="uploader" className='uploader'>
-            <input type="file" id="fileInput" onChange={handleFileSelect} accept=".pdf" style={{ display: 'none' }} />
-            <button className="btn btn-primary btn-block btn-lg" onClick={handleButtonFileClick}>
-              <span><b>View Suggestions</b></span>
+          <div id="uploader" className="uploader">
+            <input
+              type="file"
+              id="fileInput"
+              onChange={handleFileSelect}
+              accept=".pdf"
+              style={{ display: "none" }}
+            />
+            <button
+              className="btn btn-primary btn-block btn-lg"
+              onClick={handleButtonFileClick}
+            >
+              <span>
+                <b>Upload file</b>
+              </span>
             </button>
-            <p className='up'>Upload file</p>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
