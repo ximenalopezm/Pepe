@@ -1,18 +1,30 @@
-import React, { Component } from 'react'
-import Viewer from '../Viewer.jsx'
-import '../styles/PDFCorrection.css'
+import React, { Component } from "react";
+import { useLocation } from "react-router-dom";
+import Viewer from "../Viewer.jsx";
+import TextPreview from "./TextPreview.jsx";
+import "../styles/PDFCorrection.css";
+import logo from "../images/logo.svg";
 
 export const PDFCorrection = () => {
+  const { state } = useLocation();
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-8">
-          <Viewer />
+          <Viewer file={state.file} />
         </div>
         <div className="col-4">
-            <h1>Todo</h1>
+          <div className="warning-container">
+            <img src={logo} className="logo" alt="logo" />
+            <div className="container">
+              <TextPreview cardText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
+              <TextPreview cardText="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
+              <TextPreview cardText="Hola como se encuentra el dia de hoy" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

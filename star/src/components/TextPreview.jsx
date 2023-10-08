@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "../styles/TextPreview.css";
 
-const TextPreview = () => {
+const TextPreview = ({cardText}) => {
   const [cards, setCards] = useState([
     {
       id: 1,
       title: "This is option 2",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum scelerisque magna et ex cursus, at auctor elit consectetur. Nulla facilisi. Sed sit amet lacus augue. Quisque in justo nec libero aliquet faucibus. Aliquam erat volutpat. Sed bibendum tincidunt dui vel bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam non libero vitae dui mattis pellentesque eget vel turpis. Sed aliquet purus nec nibh vulputate rhoncus. Ut bibendum erat sed turpis euismod, sit amet convallis tellus varius.",
+        cardText,
       isExpanded: false,
     },
     // Add more cards as needed
@@ -30,7 +30,7 @@ const TextPreview = () => {
   };
 
   return (
-    <div className="container">
+    <div className="card-container">
       {cards.map((card) => (
         <div
           key={card.id}
