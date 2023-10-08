@@ -43,6 +43,7 @@ const TextPreview = ({cardText, cardTitle, onClick}) => {
           className={`card2 ${card.isExpanded ? "expanded" : ""}`}
           onClick={() => {
             toggleCardExpansion(card.id);
+            onClick();
           }}
         >
           <h3>{card.isExpanded ?

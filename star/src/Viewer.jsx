@@ -7,7 +7,7 @@ let x;
 let y;
 let docViewer;
 
-const Viewer = ({ file, titles}) => {
+const Viewer = ({ file, titles }) => {
   const viewer = useRef(null);
 
   useEffect(() => {
@@ -31,8 +31,7 @@ const Viewer = ({ file, titles}) => {
       });
 
       documentViewer.addEventListener('documentLoaded', () => {
-        for (let j = 0; j < titles.length(); j++) {
-          const searchText = titles[j];
+
         const mode = Search.Mode.PAGE_STOP | Search.Mode.HIGHLIGHT;
         const searchOptions = {
           // If true, a search of the entire document will be performed. Otherwise, a single search will be performed.
@@ -42,7 +41,6 @@ const Viewer = ({ file, titles}) => {
             // with 'PAGE_STOP' mode, the callback is invoked after each page has been searched.
             if (result.resultCode === Search.ResultCode.FOUND) {
               const highlight = new Annotations.TextHighlightAnnotation();
-              //for (let i = 0; i < result) 
               const textQuad = result.quads[0].getPoints(); // getPoints will return Quad objects
               // now that we have the result Quads, it's possible to highlight text or create annotations on top of the text
               highlight.PageNumber = result.pageNum;
@@ -56,14 +54,14 @@ const Viewer = ({ file, titles}) => {
               annotationManager.addAnnotation(highlight);
               annotationManager.drawAnnotations(highlight.PageNumber);
               pageN = highlight.PageNumber;
-              x = highlight.Y;
+              x = highlight.X;
               y = highlight.Y;
             }
           }
         };
+        const searchText = titles[0].slice(1, -1);
         documentViewer.textSearchInit(searchText, mode, searchOptions)
         docViewer = documentViewer;
-        }
       });
     });
   }, [file]);
