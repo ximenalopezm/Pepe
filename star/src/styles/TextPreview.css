@@ -19,7 +19,6 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-bottom: 3em;
 }
 
 h3 {
@@ -65,8 +64,8 @@ p {
 .card2 {
   display: block;
   top: 0px;
+  width: 100%;
   position: relative;
-  max-width: 262px;
   background-color: #FFFF;
   border-radius: 4px;
   padding-left: 24px;
