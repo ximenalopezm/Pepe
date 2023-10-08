@@ -9,6 +9,7 @@ const Viewer = ({file}) => {
   useEffect(() => {
     WebViewer(
       {
+        path: '/webviewer/lib',
         licenseKey: 'demo:1696694806392:7ceed1ab03000000002349e86424448cab9456268a93821a2edd579453',  // sign up to get a free trial key at https://dev.apryse.com
         disabledElements: [
           'header'
@@ -16,15 +17,7 @@ const Viewer = ({file}) => {
       },
       viewer.current,
     ).then(instance => {
-        console.log('WebViewer initialized');
-        instance.UI.loadDocument(file, { filename: file.name })
-          .then(() => {
-            console.log('Document loaded successfully');
-          })
-          .catch((error) => {
-            console.error('Error loading document:', error);
-          });
-
+      instance.UI.loadDocument(file, { filename: file.name });
 
       const { documentViewer, annotationManager, Annotations } = instance.Core;
 
@@ -44,7 +37,7 @@ const Viewer = ({file}) => {
         annotationManager.redrawAnnotation(rectangleAnnot);
       });
     });
-  }, []);
+  }, [file]);
 
   return (
     <div className="Viewer">
